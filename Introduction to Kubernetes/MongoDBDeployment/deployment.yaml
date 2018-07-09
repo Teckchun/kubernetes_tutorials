@@ -1,19 +1,19 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  name: mongodb-deploymnet
+  name: mongo-deployment
 spec:
   selector:
     matchLabels:
-      app: mongodb
+      app: mongo
   replicas: 4
   template:
     metadata:
       labels:
-        app: mongodb
+        app: mongo
     spec:
       containers:
-      - name: mongodb
+      - name: mongo
         image: mongo
         ports:
         - containerPort: 27017
