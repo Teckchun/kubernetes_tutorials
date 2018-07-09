@@ -36,7 +36,7 @@ spec:
   selector:
     matchLabels:
       app: tomcat
-  replica: 1
+  replicas: 1
   template:
     metadata:
       labels:
@@ -58,5 +58,5 @@ spec:
 
 ## we will use the apply command to take the directives from this file:
 ```
-    
+
 ```
