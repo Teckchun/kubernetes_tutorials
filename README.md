@@ -83,7 +83,6 @@ kubectl delete deployment hello-minikube
 
 ```
 minikube stop
-
 ```
 
 
