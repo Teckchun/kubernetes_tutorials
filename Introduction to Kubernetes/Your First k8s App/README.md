@@ -203,7 +203,7 @@ kubectl rollout history deployment/tomcat-deployment --revision=2
 * Selectors are a way of expressing how to select objects based on their labels
 * Selectors are a simple language to define what labels match and which ones done
 * You can specify if a label equals a given criteria or if it fits inside a set of criteria
-  * Equality-based 
+  * Equality-based
   * Set-based
 
 * You can label nearly anything in the Kubernetes world 
@@ -214,6 +214,12 @@ kubectl rollout history deployment/tomcat-deployment --revision=2
 * Let’s use labels to label a node that it has SSD storage and then use a selector to tell the deployment that our app should only ever go onto a node with SSD storage
 * "nodeSelector" is a property on a deployment that uses labels and selectors to choose which nodes the master decides to run a given pod on
 
+## labeling a node
+* to find a node name
+```
+kubectl get nodes
+```
+<img>
 
 
  
