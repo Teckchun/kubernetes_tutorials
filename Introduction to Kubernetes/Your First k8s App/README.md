@@ -261,6 +261,10 @@ kubectl apply -f ./deployment.yaml
 
 with these changes, Kurbernetest only deploy Tomcat to nodes that have been labeled with the storage type equaling SSD
 
+## Health Checks
+
+a way of telling Kubernetes how ot check the health of given pod
+
 
  
 
