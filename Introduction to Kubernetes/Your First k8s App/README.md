@@ -219,7 +219,47 @@ kubectl rollout history deployment/tomcat-deployment --revision=2
 ```
 kubectl get nodes
 ```
-<img>
+<img src="https://github.com/Teckchun/kubernetes_tutorials/blob/master/Assets/Images/kube-ctl-get-nodes.png?raw=true">
+
+* set node label
+```
+kubectl label node minikube storageType=ssd
+```
+* make sure label was set
+```
+kubectl describe node minikube
+```
+* apply node selector to our deployment.yaml file
+```
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: tomcat-deployment
+spec:
+  selector:
+    matchLabels:
+      app: tomcat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+      - name: tomcat
+        image: tomcat:9.0
+        ports:
+        - containerPort: 8080
+      nodeSelector:
+          storageType: ssd
+
+```
+* apply the changes
+```
+kubectl apply -f ./deployment.yaml
+```
+
+with these changes, Kurbernetest only deploy Tomcat to nodes that have been labeled with the storage type equaling SSD
 
 
  
